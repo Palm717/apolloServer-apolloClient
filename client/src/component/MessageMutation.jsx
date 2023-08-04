@@ -1,19 +1,26 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import SET_HELLO from "../mutations/helloMutation";
+import GET_HELLO from "../queries/helloQuery";
 
 export default function MessageMutation() {
-  const [setHello, { data }] = useMutation(SET_HELLO);
+  const [setHello, { data: setHelloData }] = useMutation(SET_HELLO);
+  const { data: getHelloData } = useQuery(GET_HELLO);
 
   const handleClick = () => {
-    setHello({ variables: { message: "" } });
+    setHello({ variables: { message: "hello from the front end " } });
   };
 
   return (
     <>
       <button onClick={handleClick}>Send message</button>
-      {data && (
+      {setHelloData && (
         <ul>
-          <li>{data.setHello}</li>
+          <li>{setHelloData.setHello}</li>
+        </ul>
+      )}
+      {getHelloData && (
+        <ul>
+          <li>{getHelloData.hello}</li>
         </ul>
       )}
     </>

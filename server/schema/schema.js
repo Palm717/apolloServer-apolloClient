@@ -12,11 +12,11 @@ type Mutation {
 
 const root = {
   hello: () => {
-    return "Hello World";
+    return "Hello from the back end ";
   },
 
   setHello: ({ message }) => {
-    return "Hello from the backend";
+    return message;
   },
 };
 
