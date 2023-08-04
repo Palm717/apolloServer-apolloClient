@@ -1,10 +1,9 @@
 import MessageMutation from "./component/MessageMutation";
-import "./App.css";
 
 function App() {
   return (
     <div className="container">
-      <h1>Hello</h1>
+      <h1>Super Simple GraphQL API</h1>
       <MessageMutation />
     </div>
   );

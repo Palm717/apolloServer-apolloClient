@@ -36,9 +36,6 @@ export default function MessageMutation() {
     setLocalMessage("");
   };
 
-  const styles = {
-    listStyleType: "none",
-  };
   // Component return statement
   return (
     <>
@@ -48,13 +45,13 @@ export default function MessageMutation() {
       <button onClick={handleRemove}>Remove message</button>
       {/* If localMessage is not empty and setHelloData is truthy, display mutation result */}
       {localMessage && setHelloData && (
-        <ul style={styles}>
+        <ul>
           <li>{setHelloData.setHello}</li>
         </ul>
       )}
       {/* If localMessage is not empty and getHelloData is truthy, display query result */}
       {localMessage && getHelloData && (
-        <ul style={styles}>
+        <ul>
           <li>{getHelloData.hello}</li>
         </ul>
       )}
